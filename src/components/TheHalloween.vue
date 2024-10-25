@@ -216,10 +216,10 @@ button {
 }
 
 body{
-  background-image: url('@/assets/Halloween_background.webp');
+  background-image: url('@/assets/bg_main.webp');
   background-size: cover;
   background-attachment: fixed;
-  background-position: center -35px;
+  background-position: center;
   margin: 0;
   padding: 0 15px;
   font-family: Zombie;
