@@ -18,7 +18,7 @@
           <img class="hay_bale_small" src="@/assets/Hay_bale_small.png" alt="Jack_lantern" />
           <img class="snoop_dog_dance" src="@/assets/Snoop_Dog_Dance.gif" alt="Snoop_Dog_Dance" />
         </div>
-        <button>
+        <button @click.prevent="redirectUrl">
           <img class="red_button" src="@/assets/red_button.png" alt="red_button" />
           <span class="button_text">Grab Ball Hard's Caskets</span>
         </button>
@@ -66,7 +66,7 @@
           <img class="spider_back" src="@/assets/Web.png" alt="spider_back" />
           <img class="spider_hat" src="@/assets/Spider_hat.png" alt="Spider_hat" />
         </div>
-        <button>
+        <button @click.prevent="redirectUrl">
           <img class="red_button" src="@/assets/red_button.png" alt="red_button" />
           <span class="button_text">Grab Ball Hard's Caskets</span>
         </button>
@@ -98,6 +98,9 @@
 </template>
 
 <script setup>
+
+const redirectUrl = () => {
+window.location.href = 'https://pimpmybuild.ballhardsden.com/';}
 
 </script>
 
@@ -518,6 +521,10 @@ h3 {
   .spider_block {
     display: none;
   }
+
+  h3 {
+    font-size: 20px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -535,6 +542,10 @@ h3 {
     h1 {
       font-size: 26px;
     }
+  }
+
+  h3 {
+    font-size: 20px;
   }
 }
 
