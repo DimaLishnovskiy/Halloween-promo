@@ -208,7 +208,12 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+const redirectUrl = () => {
+window.location.href = 'https://pimpmybuild.ballhardsden.com/';}
+
+</script>
 
 <style lang="scss">
 @import url("https://fonts.cdnfonts.com/css/zombie");
@@ -216,18 +221,12 @@
   position: absolute;
   z-index: 10;
   top: 50%;
-
-  .spider_hat {
-    position: absolute;
-    left: 45px;
-    top: 50px;
-  }
 }
 
 h1 {
   color: var(--RS-Wrong, #c7332a);
   text-align: center;
-  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #000;
   font-family: Zombie;
   font-size: 64px;
@@ -278,7 +277,7 @@ button {
     transform: translate(-50%, -50%);
     color: #fff;
     text-align: center;
-    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
     font-family: Zombie;
     font-size: 28px;
@@ -305,8 +304,9 @@ button {
     z-index: 3;
   }
   .cauldron {
+    height: 182px;
     left: 88px;
-    bottom: 0;
+    bottom: -10px;
     z-index: 4;
   }
   .hay_bale_small {
@@ -319,10 +319,17 @@ button {
     height: 310px;
     right: 40px;
   }
+
+  .jack_lantern {
+    bottom: 130px;
+    height: 75px;
+    right: 70px;
+    z-index: 5;
+  }
 }
 
-body {
-  background-image: url("@/assets/Halloween_background.webp");
+body{
+  background-image: url('@/assets/bg_main.webp');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -364,9 +371,14 @@ body {
   display: flex;
   gap: 30px;
   justify-content: space-around;
-  padding: 70px 18px 53px 175px;
+  padding: 70px 0;
   margin-bottom: 80px;
   position: relative;
+  text-align: center;
+
+  h1 {
+    width: 67%;
+  }
 
   &.mobile {
     padding: 32px 10px;
@@ -375,9 +387,10 @@ body {
     margin-bottom: 10px;
     margin-left: 0;
     margin-right: 0;
-    h1 {
-      font-size: 32px;
-    }
+      h1 {
+        font-size: 32px;
+        margin: auto
+      }
   }
 
   .spider_back {
@@ -394,13 +407,17 @@ body {
 
   .treat_cauldron {
     height: 126px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 25px;
   }
 }
 .title_description {
   margin: 0 auto;
   width: 80%;
   text-align: center;
-  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #000;
   font-family: Zombie;
   font-size: 40px;
@@ -418,15 +435,19 @@ body {
 }
 
 .web {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   text-align: center;
 }
 .wrapper_web {
   padding: 24px;
   border-radius: 8px;
-  border: 1px solid #5b5345;
-  background: #40382e;
+  border: 1px solid #5B5345;
+  background: #40382E;
+  background-image: url('@/assets/bghal.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   box-shadow: 0px 0px 0px 1px #383023;
   margin-bottom: 80px;
   position: relative;
@@ -441,7 +462,6 @@ body {
     position: absolute;
     top: -63.5px;
     right: -45px;
-    transform: rotateX(180deg);
   }
 
   .wrapper_items {
@@ -452,16 +472,16 @@ body {
 
     .item {
       width: 300px;
-      height: 260px;
+      height: 240px;
       position: relative;
       text-align: center;
 
       .item_img {
         margin: 0 auto;
         display: block;
-        padding-top: 50px;
         position: relative;
         z-index: 1;
+        margin-top: 50px;
       }
 
       .item_background {
@@ -479,7 +499,7 @@ body {
         transform: translateX(-50%);
         color: var(--Orange, #ff981f);
         text-align: center;
-        -webkit-text-stroke-width: 0.800000011920929;
+        -webkit-text-stroke-width: 0.800000011920929px;
         -webkit-text-stroke-color: #000;
         font-family: Zombie;
         font-size: 20px;
@@ -487,13 +507,14 @@ body {
         font-weight: 400;
         line-height: normal;
         letter-spacing: 1px;
+        width: 180px;
       }
 
       &:nth-child(2) {
         .item_img {
           height: 125px;
           position: absolute;
-          top: -45px;
+          top: -40px;
           left: 48%;
           transform: translateX(-50%);
         }
@@ -501,9 +522,9 @@ body {
 
       &:nth-child(3) {
         .item_img {
-          height: 107px;
+          height: 160px;
           position: absolute;
-          top: -15px;
+          top: -40px;
           left: 50%;
           transform: translateX(-50%);
         }
@@ -525,7 +546,7 @@ body {
           transform: translateX(-50%);
           color: #26eb22;
           text-align: center;
-          -webkit-text-stroke-width: 0.800000011920929;
+          -webkit-text-stroke-width: 0.800000011920929px;
           -webkit-text-stroke-color: #000;
           font-family: Zombie;
           font-size: 16px;
@@ -541,8 +562,12 @@ body {
           height: 148px;
           position: absolute;
           top: -35px;
-          left: 52%;
+          left: 47%;
           transform: translateX(-50%);
+        }
+
+        h4 {
+          margin-bottom: 0;
         }
       }
     }
@@ -551,7 +576,7 @@ body {
 
 h3 {
   text-align: center;
-  -webkit-text-stroke-width: 0.800000011920929;
+  -webkit-text-stroke-width: 0.800000011920929px;
   -webkit-text-stroke-color: #000;
   font-family: Zombie;
   font-size: 32px;
@@ -559,7 +584,10 @@ h3 {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 1.6px;
-  color: #fcd763;
+  background: var(--BH-Gradient, linear-gradient(180deg, #FCD763 0%, #E1A106 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .title.mobile {
@@ -584,6 +612,8 @@ h3 {
   }
   .container {
     padding: 24px;
+    margin-top: 10px;
+    gap: 60px;
   }
   .web {
     width: 100%;
@@ -592,33 +622,41 @@ h3 {
     width: 100%;
   }
   .gif_object {
-    width: 300px;
-    height: 320px;
-    margin-top: 0;
+    width: 270px;
+    height: 200px;
+    margin-top: 60px;
+    margin-bottom: 60px;
   }
   .gif_object .hay_bale {
     bottom: 30px;
-    left: 0;
+    left: 42px;
     z-index: 3;
-    height: 50%;
+    height: 130px;
   }
   .gif_object .cauldron {
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
     z-index: 4;
-    height: 50%;
+    height: 40%;
   }
   .gif_object .hay_bale_small {
-    right: 5px;
+    right: 45px;
     bottom: 30px;
     z-index: 2;
-    width: 50%;
+    width: 100px;
   }
   .gif_object .snoop_dog_dance {
     bottom: 30px;
-    height: 69%;
-    right: -8px;
+    height: 190px;
+    right: 30px;
+  }
+
+  .gif_object .jack_lantern {
+    bottom: 91px;
+    height: 45px;
+    right: 40px;
+    z-index: 5; 
   }
   button {
     width: 100%;
@@ -628,7 +666,22 @@ h3 {
     }
   }
   .spider_block {
-    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 2%;
+    left: -55px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .wrapper_web {
+    margin-bottom: 60px;
+  }
+
+  .devider {
+    margin-top: 60px;
   }
 
   .title h1 {
@@ -645,11 +698,20 @@ h3 {
     width: 100%;
   }
   .title {
-    padding: 35px 18px 26px 175px;
     align-items: center;
 
     h1 {
       font-size: 26px;
+    }
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+  .title {
+    padding: 40px 0;
+    .treat_cauldron {
+      height: 65px;
     }
   }
 }
@@ -657,11 +719,16 @@ h3 {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   .title {
-    padding: 35px 18px 26px 175px;
     align-items: center;
 
     h1 {
       font-size: 36px;
+    }
+  }
+  .title {
+    padding: 50px 0;
+    .treat_cauldron {
+      height: 85px;
     }
   }
 }
@@ -669,7 +736,6 @@ h3 {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .title {
-    padding: 35px 18px 26px 175px;
 
     h1 {
       font-size: 48px;

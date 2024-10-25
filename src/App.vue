@@ -1,5 +1,5 @@
 <template>
-  <TheHalloween msg="Welcome to Your Vue.js App" />
+  <TheHalloween/>
 </template>
 
 <script setup>
