@@ -7,15 +7,15 @@
       <section class="promo">
         <div class="title desktop">
           <h1>Ball Hard’s Caskets -  Halloween PROMO</h1>
-          <img class="treat_cauldron" src="@/assets/animated_box.gif" alt="animated_box" />
+          <img class="treat_cauldron" src="@/assets/Box.png" alt="Box" />
           <img class="spider_back" src="@/assets/Web.png" alt="spider_back" />
           <img class="spider_hat" src="@/assets/Spider_hat.png" alt="Spider_hat" />
         </div>
         <p class="title_description">For Every <span class="green_text">$100</span> you invest in your account, you receive one Ball Hard's Casket filled with random loot!</p>
         <div class="gif_object">
           <img class="hay_bale" src="@/assets/Hay_bale.png" alt="hay bale">
-          <img class="cauldron" src="@/assets/Great_cauldron.png" alt="Great_cauldron" />
-          <img class="hay_bale_small" src="@/assets/Hay_bale_small.png" alt="Jack_lantern" />
+          <img class="cauldron" src="@/assets/animated_casket.gif" alt="animated_casket" />
+          <img class="hay_bale_small" src="@/assets/Hay_bale_small.png" alt="hey" />
           <img class="snoop_dog_dance" src="@/assets/Snoop_Dog_Dance.gif" alt="Snoop_Dog_Dance" />
         </div>
         <button @click.prevent="redirectUrl">
@@ -23,8 +23,7 @@
           <span class="button_text">Grab Ball Hard's Caskets</span>
         </button>
         <div class="spider_block">
-          <img class="spider_back" src="@/assets/Web.png" alt="spider_back" />
-          <img class="spider_hat" src="@/assets/Spider_hat.png" alt="Spider_hat" />
+          <img class="spider_back" src="@/assets/spider.gif" alt="spider_back" />
         </div>
       </section>
 
@@ -42,25 +41,25 @@
               <div class="item">
                 <img class="item_img" src="@/assets/Marcus_scimitar_final.png" alt="Marcus_scimitar_final">
                 <img class="item_background" src="@/assets/Ellipse 1.svg" alt="ellipse">
-                <h4>Items</h4>
+                <h4>coaching</h4>
               </div>
 
               <div class="item">
-                <img class="item_img" src="@/assets/Dizana_quiver.png" alt="Dizana's_quiver">
+                <img class="item_img" src="@/assets/Group.svg" alt="Group">
                 <img class="item_background" src="@/assets/Ellipse 1.svg" alt="ellipse">
-                <h4>Xp</h4>
+                <h4>VOUcher</h4>
               </div>
 
               <div class="item">
                 <img class="item_img" src="@/assets/money.gif" alt="money">
                 <img class="item_background" src="@/assets/Ellipse 1.svg" alt="ellipse">
-                <h4>Skills</h4>
+                <h4>gold</h4>
               </div>
 
               <div class="item">
-                <img class="item_img" src="@/assets/Bow_of_faerdhinen.png" alt="Bow_of_faerdhinen">
+                <img class="item_img" src="@/assets/Dragon_scimitar_detail.png" alt="Dragon_scimitar_detail">
                 <img class="item_background" src="@/assets/Ellipse 1.svg" alt="ellipse">
-                <h4>Our Physical Items</h4>
+                <h4>Our Physical Item - dragon scimitar</h4>
               </div>
           </div>
           <img class="spider_back" src="@/assets/Web.png" alt="spider_back" />
@@ -110,18 +109,12 @@ window.location.href = 'https://pimpmybuild.ballhardsden.com/';}
   position: absolute;
   z-index: 10;
   top: 50%;
-
-  .spider_hat {
-    position: absolute;
-    left: 45px;
-    top: 50px;
-  }
 }
 
 h1 {
   color: var(--RS-Wrong, #C7332A);
   text-align: center;
-  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #000;
   font-family: Zombie;
   font-size: 64px;
@@ -199,9 +192,11 @@ button {
     z-index: 3;
   }
   .cauldron {
+    height: 182px;
     left: 88px;
-    bottom: 0;
+    bottom: -10px;
     z-index: 4;
+    transform: scaleX(-1);
   }
   .hay_bale_small {
     right: 60px;
@@ -308,7 +303,7 @@ body{
   }
 
 .web {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   text-align: center;
 }
@@ -317,6 +312,10 @@ body{
   border-radius: 8px;
   border: 1px solid #5B5345;
   background: #40382E;
+  background-image: url('@/assets/bghal.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   box-shadow: 0px 0px 0px 1px #383023;
   margin-bottom: 80px;
   position: relative;
@@ -342,16 +341,16 @@ body{
 
     .item {
       width: 300px;
-      height: 260px;
+      height: 240px;
       position: relative;
       text-align: center;
 
       .item_img {
         margin: 0 auto;
         display: block;
-        padding-top: 50px;
         position: relative;
         z-index: 1;
+        margin-top: 50px;
       }
 
       .item_background {
@@ -377,13 +376,14 @@ body{
         font-weight: 400;
         line-height: normal;
         letter-spacing: 1px;
+        width: 180px;
       }
 
       &:nth-child(2) {
         .item_img {
           height: 125px;
           position: absolute;
-          top: -45px;
+          top: -40px;
           left: 48%;
           transform: translateX(-50%);
         }
@@ -391,9 +391,9 @@ body{
 
       &:nth-child(3) {
         .item_img {
-          height: 107px;
+          height: 160px;
           position: absolute;
-          top: -15px;
+          top: -40px;
           left: 50%;
           transform: translateX(-50%);
         }
@@ -434,6 +434,10 @@ body{
           top: -35px;
           left: 52%;
           transform: translateX(-50%);
+        }
+
+        h4 {
+          margin-bottom: 0;
         }
       }
     }
@@ -498,7 +502,7 @@ h3 {
     transform: translateX(-50%);
     bottom: 0;
     z-index: 4;
-    height: 50%;
+    height: 40%;
   }
   .gif_object .hay_bale_small {
     right: 5px;
