@@ -13,7 +13,7 @@
         <p class="title_description">For Every <span class="green_text">$100</span> you invest in your account, you receive one Ball Hard's Casket filled with random loot!</p>
         <div class="gif_object">
           <img class="hay_bale" src="@/assets/Hay_bale.png" alt="hay bale">
-          <img class="cauldron" src="@/assets/animated_casket.gif" alt="animated_casket" />
+          <img class="cauldron" src="@/assets/casket_rotated.gif" alt="animated_casket" />
           <img class="hay_bale_small" src="@/assets/Hay_bale_small.png" alt="hey" />
           <img class="snoop_dog_dance" src="@/assets/Snoop_Dog_Dance.gif" alt="Snoop_Dog_Dance" />
           <img class="jack_lantern" src="@/assets/Jack_lantern.png" alt="Jack_lantern">
@@ -195,7 +195,6 @@ button {
     left: 88px;
     bottom: -10px;
     z-index: 4;
-    transform: scaleX(-1);
   }
   .hay_bale_small {
     right: 60px;
@@ -255,9 +254,14 @@ body{
   display: flex;
   gap: 30px;
   justify-content: space-around;
-  padding: 70px 18px 53px 175px;
+  padding: 70px 0;
   margin-bottom: 80px;
   position: relative;
+  text-align: center;
+
+  h1 {
+    width: 67%;
+  }
 
   &.mobile {
     padding: 32px 10px;
@@ -268,6 +272,7 @@ body{
     margin-right: 0;
       h1 {
         font-size: 32px;
+        margin: auto
       }
   }
 
@@ -285,6 +290,10 @@ body{
 
   .treat_cauldron{
     height: 126px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 25px;
   }
 }
 .title_description {
@@ -459,7 +468,10 @@ h3 {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 1.6px;
-  color: #FCD763 ;
+  background: var(--BH-Gradient, linear-gradient(180deg, #FCD763 0%, #E1A106 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
   .title.mobile {
@@ -482,9 +494,10 @@ h3 {
   .title.desktop {
     display:  none;
   }
-    .container {
+  .container {
     padding: 24px;
     margin-top: 10px;
+    gap: 60px;
   }
   .web {
     width: 100%;
@@ -493,15 +506,16 @@ h3 {
     width: 100%;
   }
   .gif_object {
-    width: 300px;
-    height: 320px;
-    margin-top: 0;
+    width: 270px;
+    height: 200px;
+    margin-top: 60px;
+    margin-bottom: 60px;
   }
   .gif_object .hay_bale {
     bottom: 30px;
-    left: 0;
+    left: 42px;
     z-index: 3;
-    height: 50%;
+    height: 130px;
   }
   .gif_object .cauldron {
     left: 50%;
@@ -511,22 +525,22 @@ h3 {
     height: 40%;
   }
   .gif_object .hay_bale_small {
-    right: 5px;
+    right: 45px;
     bottom: 30px;
     z-index: 2;
-    width: 50%;
+    width: 100px;
   }
   .gif_object .snoop_dog_dance {
     bottom: 30px;
-    height: 69%;
-    right: -8px;
+    height: 190px;
+    right: 30px;
   }
 
   .gif_object .jack_lantern {
-    bottom: 114px;
-    height: 60px;
-    right: 0px;
-    z-index: 5;
+    bottom: 91px;
+    height: 45px;
+    right: 40px;
+    z-index: 5; 
   }
   button {
     width: 100%;
@@ -536,11 +550,22 @@ h3 {
     }
   }
   .spider_block {
-    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 2%;
+    left: -55px;
   }
 
   h3 {
     font-size: 20px;
+  }
+
+  .wrapper_web {
+    margin-bottom: 60px;
+  }
+
+  .devider {
+    margin-top: 60px;
   }
 }
 
@@ -553,7 +578,6 @@ h3 {
     width: 100%;
   }
   .title {
-    padding: 35px 18px 26px 175px;
     align-items: center;
 
     h1 {
@@ -564,16 +588,27 @@ h3 {
   h3 {
     font-size: 20px;
   }
+  .title {
+    padding: 40px 0;
+    .treat_cauldron {
+      height: 65px;
+    }
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   .title {
-    padding: 35px 18px 26px 175px;
     align-items: center;
 
     h1 {
       font-size: 36px;
+    }
+  }
+  .title {
+    padding: 50px 0;
+    .treat_cauldron {
+      height: 85px;
     }
   }
 }
@@ -581,7 +616,6 @@ h3 {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .title {
-    padding: 35px 18px 26px 175px;
 
     h1 {
       font-size: 48px;
