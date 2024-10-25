@@ -8,8 +8,7 @@
         <div class="title desktop">
           <h1>Ball Hard’s Caskets -  Halloween PROMO</h1>
           <img class="treat_cauldron" src="@/assets/Box.png" alt="Box" />
-          <img class="spider_back" src="@/assets/Web.png" alt="spider_back" />
-          <img class="spider_hat" src="@/assets/Spider_hat.png" alt="Spider_hat" />
+          <img class="spider_back" src="@/assets/right_spider.gif" alt="spider_back" />
         </div>
         <p class="title_description">For Every <span class="green_text">$100</span> you invest in your account, you receive one Ball Hard's Casket filled with random loot!</p>
         <div class="gif_object">
@@ -17,13 +16,14 @@
           <img class="cauldron" src="@/assets/animated_casket.gif" alt="animated_casket" />
           <img class="hay_bale_small" src="@/assets/Hay_bale_small.png" alt="hey" />
           <img class="snoop_dog_dance" src="@/assets/Snoop_Dog_Dance.gif" alt="Snoop_Dog_Dance" />
+          <img class="jack_lantern" src="@/assets/Jack_lantern.png" alt="Jack_lantern">
         </div>
         <button @click.prevent="redirectUrl">
           <img class="red_button" src="@/assets/red_button.png" alt="red_button" />
           <span class="button_text">Grab Ball Hard's Caskets</span>
         </button>
         <div class="spider_block">
-          <img class="spider_back" src="@/assets/spider.gif" alt="spider_back" />
+          <img class="spider_back" src="@/assets/left_spider.gif" alt="spider_back" />
         </div>
       </section>
 
@@ -62,8 +62,7 @@
                 <h4>Our Physical Item - dragon scimitar</h4>
               </div>
           </div>
-          <img class="spider_back" src="@/assets/Web.png" alt="spider_back" />
-          <img class="spider_hat" src="@/assets/Spider_hat.png" alt="Spider_hat" />
+          <img class="spider_back" src="@/assets/right_spider.gif" alt="spider_back" />
         </div>
         <button @click.prevent="redirectUrl">
           <img class="red_button" src="@/assets/red_button.png" alt="red_button" />
@@ -165,7 +164,7 @@ button {
     transform: translate(-50%,-50%);
     color: #FFF;
     text-align: center;
-    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
     font-family: Zombie;
     font-size: 28px;
@@ -208,13 +207,20 @@ button {
     height: 310px;
     right: 40px;
   }
+
+  .jack_lantern {
+    bottom: 130px;
+    height: 75px;
+    right: 70px;
+    z-index: 5;
+  }
 }
 
 body{
   background-image: url('@/assets/Halloween_background.webp');
   background-size: cover;
   background-attachment: fixed;
-  background-position: center;
+  background-position: center -35px;
   margin: 0;
   padding: 0 15px;
   font-family: Zombie;
@@ -285,7 +291,7 @@ body{
   margin: 0 auto;
   width: 80%;
   text-align: center;
-  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #000;
   font-family: Zombie;
   font-size: 40px;
@@ -330,7 +336,6 @@ body{
     position: absolute;
     top: -63.5px;
     right: -45px;
-    transform: rotateX(180deg);
   }
 
   .wrapper_items {
@@ -368,7 +373,7 @@ body{
         transform: translateX(-50%);
         color: var(--Orange, #FF981F);
         text-align: center;
-        -webkit-text-stroke-width: 0.800000011920929;
+        -webkit-text-stroke-width: 0.800000011920929px;
         -webkit-text-stroke-color: #000;
         font-family: Zombie;
         font-size: 20px;
@@ -415,7 +420,7 @@ body{
           transform: translateX(-50%);
           color: #26EB22;
           text-align: center;
-          -webkit-text-stroke-width: 0.800000011920929;
+          -webkit-text-stroke-width: 0.800000011920929px;
           -webkit-text-stroke-color: #000;
           font-family: Zombie;
           font-size: 16px;
@@ -432,7 +437,7 @@ body{
           height: 148px;
           position: absolute;
           top: -35px;
-          left: 52%;
+          left: 47%;
           transform: translateX(-50%);
         }
 
@@ -446,7 +451,7 @@ body{
 
 h3 {
   text-align: center;
-  -webkit-text-stroke-width: 0.800000011920929;
+  -webkit-text-stroke-width: 0.800000011920929px;
   -webkit-text-stroke-color: #000;
   font-family: Zombie;
   font-size: 32px;
@@ -514,6 +519,13 @@ h3 {
     bottom: 30px;
     height: 69%;
     right: -8px;
+  }
+
+  .gif_object .jack_lantern {
+    bottom: 114px;
+    height: 60px;
+    right: 0px;
+    z-index: 5;
   }
   button {
     width: 100%;
